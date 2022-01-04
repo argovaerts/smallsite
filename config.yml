@@ -1,4 +1,11 @@
 baseUrl: https://q4.re/
 languageCode: nl
 title: Arne Govaerts
-theme: indigo
+theme: 
+  - quatre
+
+Params:
+  mainSections:
+    - posts
+    - updates
+
