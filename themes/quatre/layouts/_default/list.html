@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="h-feed">
+    {{ range .RegularPages }}
+    {{ .Render "hentry" }}
+    {{ end }}
+</section>
+{{ end }}

@@ -1,0 +1,24 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- meta -->
+    <title>{{ if .Title }}{{ .Title }}{{ else }}📯{{ end }} | {{ .Site.Title }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author.name }}">
+
+    <!-- IndieWeb -->
+    {{ with .Site.Params.author.email }}<link rel="me" href="mailto:{{ . }}">{{ end }}
+    {{ with .Site.Params.author.github }}<link rel="me" href="https://github.com/{{ . }}">{{ end }}
+    {{ with .Site.Params.author.twitter }}<link rel="me" href="https://twitter.com/{{ . }}">{{ end }}
+    <link rel="authorization_endpoint" href={{ .Site.Params.endpoints.auth | default "https://indieauth.com/auth" }} />
+    <link rel="token_endpoint" href={{ .Site.Params.endpoints.token | default "https://tokens.indieauth.com/token" }} />
+    {{ with .Site.Params.endpoints.Webmention}}<link rel="webmention" href="{{ . }}" />{{ end }}
+    {{ with .Site.Params.paymentPointer }}<meta name="monetization" content={{ . }}>{{ end }}
+
+    <!-- other -->
+    <link rel="stylesheet" href="https://unpkg.com/awsm.css@3.0.7/dist/awsm.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/awsm.css@3.0.7/dist/awsm_theme_black.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/css/style.css">
+</head>

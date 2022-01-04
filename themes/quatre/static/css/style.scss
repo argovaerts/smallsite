@@ -1,0 +1,33 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body > header {
+    text-align: center;
+}
+
+body > footer {
+    a {
+        &:link {
+            text-decoration: none;
+            color: inherit;
+        }
+        &:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+        &:link:active {
+            text-decoration: underline;
+        }
+        &:visited:active {
+            text-decoration: underline;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+article {
+    border-bottom: 1px solid;
+}
