@@ -1,6 +1,6 @@
 ---
 title: "webmention"
-date: 2022-01-05T20:27:37+01:00
+date: 2022-01-05T20:30:37+01:00
 ---
 https://webmention.rocks/test/1
 https://webmention.rocks/test/2
