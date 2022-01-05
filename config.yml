@@ -2,8 +2,16 @@ baseUrl: https://q4.re/
 languageCode: nl
 title: Arne Govaerts
 theme: quatre
+enableRobotsTXT: true
+
+author:
+  name: Arne Govaerts
+  email: arne@q4.re
+  twitter: argovaerts
+  github: argovaerts
 
 Params:
+  description: Een random personal site
   author:
     name: Arne Govaerts
     email: arne@q4.re
@@ -12,4 +20,12 @@ Params:
   license:
     name: CC BY-NC-SA 4.0
     url: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
+  menu:
+    - name: home
+      url: /
+    - name: over
+      url: /over
+    - name: updates
+      url: /updates
+    - name: posts
+      url: /posts

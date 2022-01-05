@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="h-feed">
-    {{ range where .Site.RegularPages "Type" "in" (slice "posts" "updates") }}
+    {{ range first 10 (where .Site.RegularPages "Type" "in" (slice "posts" "updates")) }}
     {{ .Render "hentry" }}
     {{ end }}
 </section>

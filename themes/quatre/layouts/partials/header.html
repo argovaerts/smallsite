@@ -2,21 +2,11 @@
     <h1>{{ .Site.Title }}</h1>
     <nav>
         <ul>
+            {{ range .Site.Params.menu }}
             <li>
-                <a href="/">home</a>
+                <a href="{{ index . "url" }}">{{ index . "name" }}</a>
             </li>
-            <li>
-                <a href="/over">over</a>
-            </li>
-            <li>
-                <a href="/updates">updates</a>
-            </li>
-            <li>
-                <a href="/posts">posts</a>
-            </li>
-            <li>
-                <a href="/feeds">feeds</a>
-            </li>
+            {{ end }}
         </ul>
     </nav>
 </header>

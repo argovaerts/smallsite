@@ -6,12 +6,20 @@
     <!-- meta -->
     <title>{{ if .Title }}{{ .Title }}{{ else }}📯{{ end }} | {{ .Site.Title }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="author" content="{{ .Site.Params.author.name }}">
+    <meta name="author" content="{{ .Site.Author.name }}">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/schema.html" . }}
+
+    <!-- feeds -->
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
 
     <!-- IndieWeb -->
-    {{ with .Site.Params.author.email }}<link rel="me" href="mailto:{{ . }}">{{ end }}
-    {{ with .Site.Params.author.github }}<link rel="me" href="https://github.com/{{ . }}">{{ end }}
-    {{ with .Site.Params.author.twitter }}<link rel="me" href="https://twitter.com/{{ . }}">{{ end }}
+    {{ with .Site.Author.email }}<link rel="me" href="mailto:{{ . }}">{{ end }}
+    {{ with .Site.Author.github }}<link rel="me" href="https://github.com/{{ . }}">{{ end }}
+    {{ with .Site.Author.twitter }}<link rel="me" href="https://twitter.com/{{ . }}">{{ end }}
     <link rel="authorization_endpoint" href={{ .Site.Params.endpoints.auth | default "https://indieauth.com/auth" }} />
     <link rel="token_endpoint" href={{ .Site.Params.endpoints.token | default "https://tokens.indieauth.com/token" }} />
     {{ with .Site.Params.endpoints.Webmention}}<link rel="webmention" href="{{ . }}" />{{ end }}
