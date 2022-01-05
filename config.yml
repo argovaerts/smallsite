@@ -33,3 +33,6 @@ Params:
       url: /updates
     - name: posts
       url: /posts
+  endpoints:
+    webmention: https://webmention.io/q4.re/webmention
+    pingback: https://webmention.io/q4.re/xmlrpc

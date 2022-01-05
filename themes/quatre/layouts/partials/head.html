@@ -22,8 +22,9 @@
     {{ with .Site.Author.twitter }}<link rel="me" href="https://twitter.com/{{ . }}">{{ end }}
     <link rel="authorization_endpoint" href={{ .Site.Params.endpoints.auth | default "https://indieauth.com/auth" }} />
     <link rel="token_endpoint" href={{ .Site.Params.endpoints.token | default "https://tokens.indieauth.com/token" }} />
-    {{ with .Site.Params.endpoints.Webmention}}<link rel="webmention" href="{{ . }}" />{{ end }}
-    {{ with .Site.Params.paymentPointer }}<meta name="monetization" content={{ . }}>{{ end }}
+    {{ with .Site.Params.endpoints.webmention}}<link rel="webmention" href="{{ . }}" />{{ end }}
+    {{ with .Site.Params.endpoints.pingback}}<link rel="pingback" href="{{ . }}" />{{ end }}
+    {{ with .Site.Params.payment_pointer }}<meta name="monetization" content={{ . }}>{{ end }}
 
     <!-- other -->
     <link rel="stylesheet" href="https://unpkg.com/awsm.css@3.0.7/dist/awsm.min.css">
