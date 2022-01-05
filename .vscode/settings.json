@@ -1,3 +1,16 @@
 {
-    "ltex.language": "nl-BE"
+    "ltex.language": "nl-BE",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        },
+    },
+    "editor.suggestOnTriggerCharacters": true
 }
