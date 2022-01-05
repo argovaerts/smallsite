@@ -10,13 +10,17 @@ author:
   twitter: argovaerts
   github: argovaerts
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  page:
+    - HTML
+    - RSS
+
 Params:
   description: Een random personal site
-  author:
-    name: Arne Govaerts
-    email: arne@q4.re
-    twitter: argovaerts
-    github: argovaerts
   license:
     name: CC BY-NC-SA 4.0
     url: https://creativecommons.org/licenses/by-nc-sa/4.0/

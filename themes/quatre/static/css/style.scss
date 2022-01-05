@@ -31,3 +31,12 @@ body > footer {
 article {
     border-bottom: 1px solid;
 }
+
+.search > p {
+    display: flex;
+
+    input {
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+}

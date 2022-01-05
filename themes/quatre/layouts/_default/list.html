@@ -1,5 +1,8 @@
 {{ define "main" }}
 <section class="h-feed">
+    <header>
+        <h1 class="p-name">{{ .Title }}</h1>
+    </header>
     {{ range .RegularPages }}
     {{ .Render "hentry" }}
     {{ end }}
