@@ -7,8 +7,9 @@ if(query !== null) {
     const list = await (await fetch('/index.json')).json();
 
     const fuse = new Fuse(list, {
+        isCaseSensitive: false,
+        ignoreLocation: true,
         minMatchCharLength: 2,
-        useExtendedSearch: true,
         keys: ['title', 'content', 'date'],
     })
     const result = fuse.search(query);
